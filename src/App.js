@@ -17,7 +17,17 @@ class App extends React.Component {
 
     malzemeEkle(malzeme){
         this.setState({
-            ingredients: [...this.state.ingredients].concat([malzeme])
+            ingredients: [...this.state.ingredients].concat([
+                {...malzeme, displayId: Math.random()}
+            ])
+        })
+    }
+
+    malzemeCikar(malzeme){
+        this.setState({
+            ingredients: this.state.ingredients.filter((ingredient) => {
+                return ingredient.displayId !== malzeme.displayId
+            })
         })
     }
 
@@ -26,7 +36,9 @@ class App extends React.Component {
             <div>
                 <Hamburger ingredients={this.state.ingredients} />
                 <TotalPrice />
-                <ItemList items={ingrediends} malzemeEkle={this.malzemeEkle}/>
+                <ItemList items={ingrediends}
+                          malzemeEkle={this.malzemeEkle}
+                />
             </div>
         );
     }
