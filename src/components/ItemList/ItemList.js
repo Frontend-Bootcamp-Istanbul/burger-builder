@@ -6,7 +6,10 @@ function ItemList(props) {
         <div>
             {
                 props.items.map((item) => {
-                    return <Item key={item.id} {...item}  malzemeEkle={props.malzemeEkle}/>
+                    return <Item key={item.id} {...item}
+                                 malzemeEkle={props.malzemeEkle}
+                                malzemeCikar={props.malzemeCikar}
+                    />
                 })
             }
         </div>
