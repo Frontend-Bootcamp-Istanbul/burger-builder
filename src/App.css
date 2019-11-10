@@ -200,3 +200,8 @@
   background-color: #99703F;
   color: white;
 }
+
+.BuildControl .Less.disabled {
+  cursor: not-allowed;
+  background: #bfc5b7;
+}

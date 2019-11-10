@@ -49,6 +49,7 @@ class App extends React.Component {
                 <ItemList items={ingrediends}
                           malzemeEkle={this.malzemeEkle}
                           malzemeCikar={this.malzemeCikar}
+                          selectedIngredients={this.state.ingredients}
                 />
             </div>
         );

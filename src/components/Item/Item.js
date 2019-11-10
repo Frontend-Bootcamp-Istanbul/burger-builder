@@ -9,9 +9,11 @@ function Item(props) {
             <div className="Label">
                 {props.name}
             </div>
-            <button className="Less" onClick={() => {
-                props.malzemeCikar(props);
-            }}>Cıkar</button>
+            {
+                props.butonGoster ? <button className="Less" onClick={() => {
+                    props.malzemeCikar(props);
+                }}>Cıkar</button> : <button className="Less disabled">Cıkar</button>
+            }
             <button className="more" onClick={() => {
                 props.malzemeEkle(props);
             }}>Ekle</button>
