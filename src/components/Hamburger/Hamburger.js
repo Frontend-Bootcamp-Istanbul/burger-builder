@@ -15,7 +15,7 @@ function Hamburger(props) {
             }
             {
                 props.ingredients.map((ingredient) => {
-                   return <div key={ingredient.id} style={{
+                   return <div key={ingredient.displayId} style={{
                        height: "20px",
                        backgroundColor: ingredient.color,
                        width: "80%",

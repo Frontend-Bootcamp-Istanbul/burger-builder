@@ -9,6 +9,9 @@ function Item(props) {
             <div className="Label">
                 {props.name}
             </div>
+            <div>
+                {props.sayi}
+            </div>
             {
                 props.butonGoster ? <button className="Less" onClick={() => {
                     props.malzemeCikar(props);
