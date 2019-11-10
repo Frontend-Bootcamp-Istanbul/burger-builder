@@ -14,6 +14,7 @@ class App extends React.Component {
 
         this.malzemeEkle = this.malzemeEkle.bind(this);
         this.malzemeCikar = this.malzemeCikar.bind(this);
+        this.hesapla = this.hesapla.bind(this);
     }
 
     malzemeEkle(malzeme){
@@ -41,11 +42,19 @@ class App extends React.Component {
         })
     }
 
+    hesapla(){
+        let toplam = 0;
+        this.state.ingredients.forEach((item) => {
+            toplam += item.price
+        });
+        return toplam;
+    }
+
     render(){
         return (
             <div>
                 <Hamburger ingredients={this.state.ingredients} />
-                <TotalPrice />
+                <TotalPrice toplam={this.hesapla}/>
                 <ItemList items={ingrediends}
                           malzemeEkle={this.malzemeEkle}
                           malzemeCikar={this.malzemeCikar}
